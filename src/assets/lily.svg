@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Su zambağı yaprağı (alt taban) -->
+  <ellipse cx="50" cy="58" rx="40" ry="30" fill="#3a8f6f" opacity="0.55"/>
+  <!-- Yaprakta klasik "pac-man" çentiği -->
+  <path d="M50 58 L86 44 A40 30 0 0 0 78 36 Z" fill="#bfe9f0" opacity="0.6"/>
+  <ellipse cx="50" cy="56" rx="38" ry="28" fill="#4caf87" opacity="0.5"/>
+
+  <!-- Çiçek yaprakları (alt sıra) -->
+  <g fill="#ffd6e8">
+    <ellipse cx="50" cy="50" rx="7" ry="20" transform="rotate(0 50 50)"/>
+    <ellipse cx="50" cy="50" rx="7" ry="20" transform="rotate(45 50 50)"/>
+    <ellipse cx="50" cy="50" rx="7" ry="20" transform="rotate(90 50 50)"/>
+    <ellipse cx="50" cy="50" rx="7" ry="20" transform="rotate(135 50 50)"/>
+  </g>
+  <!-- Çiçek yaprakları (üst sıra, daha açık) -->
+  <g fill="#ffe9f2">
+    <ellipse cx="50" cy="50" rx="5" ry="15" transform="rotate(22 50 50)"/>
+    <ellipse cx="50" cy="50" rx="5" ry="15" transform="rotate(67 50 50)"/>
+    <ellipse cx="50" cy="50" rx="5" ry="15" transform="rotate(112 50 50)"/>
+    <ellipse cx="50" cy="50" rx="5" ry="15" transform="rotate(157 50 50)"/>
+  </g>
+  <!-- Merkez -->
+  <circle cx="50" cy="50" r="6" fill="#ffe08a"/>
+  <circle cx="50" cy="50" r="3" fill="#f5b942"/>
+</svg>
