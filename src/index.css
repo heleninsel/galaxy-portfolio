@@ -458,3 +458,17 @@ body, .window, .card, .field input, .field textarea, .theme-toggle {
 .window.closing {
   animation: window-close 200ms ease forwards;
 }
+/* Yüzen nilüferler (havuz teması) */
+.lilies {
+  position: fixed;
+  inset: 0;
+  z-index: 0;            /* arka plan üstünde, içeriğin altında */
+  pointer-events: none;  /* tıklamayı engellemesin */
+  overflow: hidden;
+}
+.lily {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 60, 50, 0.25));
+  will-change: left, top, transform;
+}

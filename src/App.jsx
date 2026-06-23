@@ -1,3 +1,4 @@
+import Lilies from "./components/Lilies";
 import { useState } from "react";
 import Starfield from "./components/Starfield";
 import MainMenu from "./components/MainMenu";
@@ -7,7 +8,6 @@ import { WINDOWS } from "./data/windows";
 
 // Pencere içerikleri
 import About from "./windows/About";
-import Projects from "./windows/Projects";
 import Gallery from "./windows/Gallery";
 import Contact from "./windows/Contact";
 import Blog from "./windows/Blog";
@@ -57,8 +57,6 @@ const [positions, setPositions] = useState({});
     switch (id) {
       case "about":
         return <About onOpenContact={() => openWindow("contact")} />;
-      case "projects":
-        return <Projects />;
       case "gallery":
         return <Gallery />;
       case "contact":
@@ -79,6 +77,7 @@ const [positions, setPositions] = useState({});
   return (
     <>
       <Starfield theme={theme} />
+      {theme === "light" && <Lilies />}
 
 <main className="desktop">
         <button className="theme-toggle" onClick={toggle} aria-label="Temayı değiştir">
