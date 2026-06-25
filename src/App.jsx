@@ -1,3 +1,7 @@
+import { useSound } from "./hooks/useSound";
+import { useSoundToggle } from "./hooks/useSoundToggle";
+import sunIcon from "./assets/sun.png";
+import moonIcon from "./assets/moon.png";
 import Lilies from "./components/Lilies";
 import { useState } from "react";
 import Starfield from "./components/Starfield";
@@ -17,6 +21,8 @@ import Works from "./windows/Works";
 import FAQ from "./windows/FAQ";
 
 function App() {
+  const { play } = useSound();
+  const { soundEnabled, toggleSound } = useSoundToggle();
   // Açık pencerelerin id listesi. Örn: ["about", "contact"]
   const [openIds, setOpenIds] = useState([]);
 
@@ -27,6 +33,7 @@ function App() {
 const [positions, setPositions] = useState({});
 
   const openWindow = (id) => {
+    play("open");
     setOpenIds((prev) => (prev.includes(id) ? prev : [...prev, id]));
     setPositions((prev) => {
       if (prev[id]) return prev;
@@ -49,6 +56,7 @@ const [positions, setPositions] = useState({});
 
   // Bir pencere kapat: listeden çıkar
   const closeWindow = (id) => {
+    play("close");
     setOpenIds((prev) => prev.filter((x) => x !== id));
   };
 
@@ -80,8 +88,20 @@ const [positions, setPositions] = useState({});
       {theme === "light" && <Lilies />}
 
 <main className="desktop">
-        <button className="theme-toggle" onClick={toggle} aria-label="Temayı değiştir">
-          {theme === "dark" ? "☀️ Havuz" : "🌙 Uzay"}
+        <button className="theme-toggle" onClick={() => { play("toggle"); toggle(); }} aria-label="Temayı değiştir">
+          <img
+            src={theme === "dark" ? sunIcon : moonIcon}
+            className="theme-icon"
+            alt={theme === "dark" ? "Havuz temasına geç" : "Uzay temasına geç"}
+          />
+        </button>
+        <button
+          className="sound-toggle"
+          onClick={toggleSound}
+          aria-label={soundEnabled ? "Sesi kapat" : "Sesi aç"}
+          title={soundEnabled ? "Sesi kapat" : "Sesi aç"}
+        >
+          {soundEnabled ? "🔊" : "🔇"}
         </button>
 
         <MainMenu onOpen={openWindow} />

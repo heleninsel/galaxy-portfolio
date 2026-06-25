@@ -1,3 +1,4 @@
+import { useSound } from "../hooks/useSound";
 import { useState } from "react";
 
 const FAQS = [
@@ -9,10 +10,11 @@ const FAQS = [
 
 export default function FAQ() {
   // o an açık olan sorunun index'i (null = hepsi kapalı)
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null); const { play } = useSound();
 
-  const toggle = (i) => {
-    setOpenIndex((cur) => (cur === i ? null : i)); // aynısına basınca kapat
+const toggle = (i) => {
+    play("accordion");
+    setOpenIndex((cur) => (cur === i ? null : i));
   };
 
   return (

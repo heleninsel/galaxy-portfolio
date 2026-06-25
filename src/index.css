@@ -62,7 +62,7 @@ body {
   overflow: hidden;
 }
 
-body, .window, .card, .field input, .field textarea, .theme-toggle {
+body, .window, .card, .field input, .field textarea {
   transition: background-color var(--transition), color var(--transition),
     border-color var(--transition);
 }
@@ -124,24 +124,44 @@ body, .window, .card, .field input, .field textarea, .theme-toggle {
   100% { transform: translate(-4%, 3%) scale(1.02); }
 }
 
+/* Yüzen nilüferler (havuz teması) */
+.lilies {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.lily {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 60, 50, 0.25));
+  will-change: left, top, transform;
+}
+
 /* ============================================
-   TEMA BUTONU
+   TEMA BUTONU (sadece ikon, hover'da büyür)
    ============================================ */
 .theme-toggle {
   position: fixed;
   top: var(--space-md);
   right: var(--space-md);
   z-index: 100;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 999px;
+  background: transparent;
+  border: none;
+  padding: 0;
   cursor: pointer;
-  font-size: var(--text-sm);
-  font-family: var(--font-display);
+  display: grid;
+  place-items: center;
+  transition: transform var(--transition);
 }
-.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle:hover { transform: scale(1.2); }
+.theme-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
 
 /* ============================================
    ANA MENÜ
@@ -229,6 +249,11 @@ body, .window, .card, .field input, .field textarea, .theme-toggle {
   from { opacity: 0; transform: scale(0.94) translateY(10px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
+@keyframes window-close {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to   { opacity: 0; transform: scale(0.94) translateY(10px); }
+}
+.window.closing { animation: window-close 200ms ease forwards; }
 .window-bar {
   display: flex;
   align-items: center;
@@ -425,9 +450,7 @@ body, .window, .card, .field input, .field textarea, .theme-toggle {
     from { transform: translateY(0); opacity: 1; }
     to   { transform: translateY(100%); opacity: 0.6; }
   }
-  .window.closing {
-    animation: window-slide-down 220ms ease forwards !important;
-  }
+  .window.closing { animation: window-slide-down 220ms ease forwards !important; }
 
   .window-bar { cursor: default; padding: var(--space-md); }
   .window-title { font-size: var(--text-lg); }
@@ -440,7 +463,6 @@ body, .window, .card, .field input, .field textarea, .theme-toggle {
 
   .theme-toggle { top: var(--space-sm); right: var(--space-sm); z-index: 200; }
 
-  /* içerik mobilde makul boyut */
   .link-row { font-size: var(--text-base); }
   .link-icon { width: 24px; height: 24px; }
   .about-avatar-img { width: 64px; height: 64px; }
@@ -450,25 +472,18 @@ body, .window, .card, .field input, .field textarea, .theme-toggle {
   .faq-q { font-size: var(--text-base); }
   .field input, .field textarea, .field label { font-size: var(--text-base); }
 }
-/* Pencere kapanış animasyonu (masaüstü: küçülerek kaybol) */
-@keyframes window-close {
-  from { opacity: 1; transform: scale(1) translateY(0); }
-  to   { opacity: 0; transform: scale(0.94) translateY(10px); }
-}
-.window.closing {
-  animation: window-close 200ms ease forwards;
-}
-/* Yüzen nilüferler (havuz teması) */
-.lilies {
+.sound-toggle {
   position: fixed;
-  inset: 0;
-  z-index: 0;            /* arka plan üstünde, içeriğin altında */
-  pointer-events: none;  /* tıklamayı engellemesin */
-  overflow: hidden;
+  top: var(--space-md);
+  right: 70px; /* tema butonunun solunda */
+  z-index: 100;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform var(--transition);
 }
-.lily {
-  position: absolute;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 8px rgba(0, 60, 50, 0.25));
-  will-change: left, top, transform;
+.sound-toggle:hover { transform: scale(1.2); }
+@media (max-width: 768px) {
+  .sound-toggle { top: var(--space-sm); right: 56px; z-index: 200; }
 }
