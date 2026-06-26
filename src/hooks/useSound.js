@@ -3,12 +3,14 @@ import openSound from "../assets/open.mp3";
 import closeSound from "../assets/close.mp3";
 import accordionSound from "../assets/accordion.mp3";
 import toggleSound from "../assets/toggle.mp3";
+import meowSound from "../assets/meow.mp3";
 
 const SOUNDS = {
   open: openSound,
   close: closeSound,
   accordion: accordionSound,
   toggle: toggleSound,
+  meow: meowSound,
 };
 
 // Web Audio API ile sesler: önceden decode edilir, çalma anında sıfır gecikme.

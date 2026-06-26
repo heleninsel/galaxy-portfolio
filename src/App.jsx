@@ -9,6 +9,8 @@ import MainMenu from "./components/MainMenu";
 import Window from "./components/Window";
 import { useTheme } from "./hooks/useTheme";
 import { WINDOWS } from "./data/windows";
+import MangoEasterEgg from "./components/MangoEasterEgg";
+import Nature from "./windows/Nature";
 
 // Pencere içerikleri
 import About from "./windows/About";
@@ -76,7 +78,7 @@ const [positions, setPositions] = useState({});
       case "links":   return <Links />;
       case "works":   return <Works />;
       case "faq":     return <FAQ />;
-      case "daily":   return <Space theme={theme} />;
+      case "daily":   return theme === "light" ? <Nature /> : <Space />;
       default:
         return <p>Bu pencere yakında ({id})</p>;
     }
@@ -84,7 +86,7 @@ const [positions, setPositions] = useState({});
 
   return (
     <>
-      <Starfield theme={theme} />
+      <Starfield theme={theme} /> <MangoEasterEgg />
       {theme === "light" && <Lilies />}
 
 <main className="desktop">

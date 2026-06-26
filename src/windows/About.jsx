@@ -1,4 +1,4 @@
-import avatar from "../assets/hero.png"; // kendi görselinle değiştirebilirsin
+import avatar from "../assets/hero.jpeg"; // kendi görselinle değiştirebilirsin
 
 export default function About() {
   return (
@@ -7,10 +7,10 @@ export default function About() {
       <div className="about-top">
         <img className="about-avatar-img" src={avatar} alt="Profil" />
         <div className="about-intro">
-          <h3 className="about-name">[İsim]</h3>
+          <h3 className="about-name">Helen İNSEL</h3>
           <p className="about-tagline">İllüstratör &amp; geliştirici</p>
           <p className="about-short">
-            Uzay, doğa ve fantastik temalarda çizimler yapıyorum.
+            Bilgisayar Mühendisliği öğrencisi
           </p>
         </div>
       </div>
@@ -18,17 +18,19 @@ export default function About() {
       {/* Alt kısım: kaydırılabilir uzun metin */}
       <div className="about-scroll">
         <p>
-          Merhaba! Ben [İsim]. Buraya kendinle ilgili daha uzun bir yazı
-          yazabilirsin — nasıl başladığın, neler yaptığın, ilgi alanların.
+          Merhaba! Ben Helen.
         </p>
         <p>
-          Bu alan kaydırılabilir, yani istediğin kadar uzun yazabilirsin.
-          Çizim tarzın, kullandığın araçlar, ilham kaynakların...
+          Bilgisayar Mühendisliği öğrencisiyim ve özellikle yazılım, siber güvenlik ve bilgisayar sistemleri alanlarına ilgi duyuyorum. Teknolojiyi yalnızca bir kariyer alanı olarak değil, sürekli öğrenebileceğim ve kendimi geliştirebileceğim bir alan olarak görüyorum.
+
+</p><p>Bilgisayar bilimlerinin yanında matematik ve uzay bilimleri de ilgimi çekiyor. Karmaşık sistemlerin nasıl çalıştığını anlamak, yeni bilgiler öğrenmek ve farklı problemler üzerinde düşünmekten keyif alıyorum. Üniversite eğitimimin yanında çeşitli TÜBİTAK projelerinde yer alıyor, Sustain2Solve ekibinde görev alıyor ve gönüllü olarak temel yazılım eğitimleri veriyorum. Teknik becerilerimi geliştirmenin yanı sıra, bilgi paylaşımının ve ekip çalışmasının da önemli olduğuna inanıyorum.
+
+</p><p>Yeni teknolojileri öğrenmek, farklı alanlarda araştırmalar yapmak ve kendimi sürekli geliştirmek günlük hayatımın önemli bir parçası. Siber güvenlik, bilgisayar mimarisi ve yazılım geliştirme alanlarında çalışmalarımı sürdürürken aynı zamanda matematik ve uzay bilimleri gibi konulara da ilgi duyuyorum.
+
+</p><p>Teknoloji dışında fotoğrafçılık, çizim ve doğa ile ilgileniyorum. Bu uğraşlar hem yaratıcılığımı besliyor hem de farklı bakış açıları kazanmama yardımcı oluyor.
         </p>
         <p>
-          Birkaç paragraf daha ekleyerek kaydırmayı test edebilirsin. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+         Bu portfolyo; üzerinde çalıştığım projeleri, katıldığım çalışmalarını ve öğrenme yolculuğum boyunca edindiğim deneyimleri paylaşmak amacıyla oluşturduğum kişisel alanımdır.
         </p>
       </div>
     </div>

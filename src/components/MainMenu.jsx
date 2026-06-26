@@ -5,7 +5,7 @@ export default function MainMenu({ onOpen }) {
   return (
     <section className="main-menu" role="dialog" aria-label="Ana menü">
       <div className="main-menu-body">
-        <h1 className="hello-big">Merhaba, ben [İsim]!</h1>
+        <h1 className="hello-big">Merhaba, ben Helen!</h1>
         <h2 className="hello-sub">illüstratör &amp; geliştirici</h2>
 
         <div className="menu-grid">
